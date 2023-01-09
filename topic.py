@@ -6,7 +6,7 @@ admin_client.create_topics(new_topics=
     [
         NewTopic(
             name='topic-2',
-            num_partitions=3,
+            num_partitions=1,
             replication_factor=1
         )
     ]
