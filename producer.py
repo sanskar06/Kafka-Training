@@ -23,5 +23,9 @@ def producer_with_key_serializer():
     producer = KafkaProducer(key_serializer=str.encode)
     producer.send('my-topic', key='key', value=b'1234')
 
+def producer_with_manual_partition():
+    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    producer.send('my-topic', value='my message', key=None, partition=2)
+    producer.flush()
 msg_callback()
 
