@@ -42,7 +42,13 @@ services:
     build: .
     environment:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-    command: python producer.py
+    command: python produce.py
     depends_on:
       - kafka
-  
+  consumer:
+    build: .
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    command: python consumer.py
+    depends_on:
+      - kafka

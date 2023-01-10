@@ -1,7 +1,10 @@
 FROM python:3
 
-RUN pip install kafka-python
+COPY requirements.txt .
 
-COPY producer.py .
 
-CMD ["python", "producer.py"]
+COPY . /app
+
+WORKDIR /app
+
+RUN pip install -r requirements.txt

@@ -7,4 +7,4 @@ for topic in topics:
 client = KafkaAdminClient(bootstrap_servers='localhost:9092')
 topic1 = client.describe_topics(['my-topic'])
 print(topic1)
-# topic1 will return the list of dict having error code , topic name and partition info 
+# topic1 will return the list of dict having error code , topic name and partition etc info 
