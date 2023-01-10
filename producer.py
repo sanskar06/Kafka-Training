@@ -1,6 +1,12 @@
 from kafka import  KafkaProducer
 import json
-
+def on_send_success(record_metadata):
+    print(record_metadata.topic)
+    print(record_metadata.partition)
+    print(record_metadata.offset)
+def msg_callback():
+    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    producer.send('my-topic', b'raw_bytes').add_callback(on_send_success)
 
 def producer_with_keys():
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
@@ -17,5 +23,5 @@ def producer_with_key_serializer():
     producer = KafkaProducer(key_serializer=str.encode)
     producer.send('my-topic', key='key', value=b'1234')
 
-producer_with_value_serializer()
+msg_callback()
 
