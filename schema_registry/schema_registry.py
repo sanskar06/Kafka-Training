@@ -26,6 +26,6 @@ def delivery_report(err, msg):
 #     return json.loads(data)
 
 
-producer.produce(topic='my-topic-value', value={'name': 'John', 'age': 30}, on_delivery=delivery_report)
+producer.produce(topic='my-topic-value', value={'name': 'sanskar', 'age': 21}, on_delivery=delivery_report)
 producer.flush()
 producer.poll(1)
