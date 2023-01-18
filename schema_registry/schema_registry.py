@@ -19,13 +19,6 @@ def delivery_report(err, msg):
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
-# def serialize(topic, message):
-#     return json.dumps(message).encode()
-
-# def deserialize(topic, data):
-#     return json.loads(data)
-
-
 producer.produce(topic='my-topic-value', value={'name': 'sanskar', 'age': 21}, on_delivery=delivery_report)
 producer.flush()
 producer.poll(1)
