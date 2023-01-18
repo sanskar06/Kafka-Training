@@ -5,8 +5,9 @@ def on_send_success(record_metadata):
     print(record_metadata.partition)
     print(record_metadata.offset)
 def msg_callback():
-    producer = KafkaProducer(bootstrap_servers='localhost:9092')
-    producer.send('my-topic', b'raw_bytes').add_callback(on_send_success)
+    producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
+    producer.send('my-topic', b'this is value ').add_callback(on_send_success)
+    producer.flush()
 
 def producer_with_keys():
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
