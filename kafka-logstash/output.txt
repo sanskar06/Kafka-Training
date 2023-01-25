@@ -1,0 +1,17 @@
+{"event":
+{"original":
+"{\\"@timestamp\\":\\"2023-01-24T05:52:06.555Z\\",
+   \\"beat\\":{\\"hostname\\":\\"d8ab9e10d1bb\\",\\"name\\":\\"d8ab9e10d1bb\\",\\"version\\":\\"5.4.3\\"},
+   \\"input_type\\":\\"log\\",
+   \\"message\\":\\"23-01-19 19:55:01,549 The program is working as expected1\\",
+   \\"offset\\":489,
+   \\"source\\":\\"/logs/app.log\\",
+   \\"tags\\":[\\"test\\"],
+   \\"type\\":\\"log\\"}"},
+   "offset":489,
+   "beat":{"name":"d8ab9e10d1bb","version":"5.4.3","hostname":"d8ab9e10d1bb"},
+   "tags":["test"],
+   "type":"log",
+   "@version":"1",
+   "@timestamp":"2023-01-24T05:52:06.555Z",
+   "source":"/logs/app.log"}'
